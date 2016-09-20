@@ -8,4 +8,7 @@ public class KassaTest {
 	public void test() {
 		
 	}
+	
+	
+	
 }
