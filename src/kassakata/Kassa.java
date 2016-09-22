@@ -1,5 +1,8 @@
 package kassakata;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * 
@@ -30,5 +33,25 @@ package kassakata;
  */
 
 public class Kassa {
+	List<Artikel> artikelen = new ArrayList<Artikel>();
+	private ArtikelRepository repository;
+	
 
+	public void setRepository(ArtikelRepository repository) {
+		this.repository = repository;
+	}
+
+
+	public void scan(String sku){
+		artikelen.add(repository.findArtikel(sku));
+	}
+	
+	
+	public int print() {
+		int totaal = 0;
+		for (Artikel artikel: artikelen) {
+			totaal = totaal + artikel.getPrijs();
+		}
+		return totaal;
+	}
 }
