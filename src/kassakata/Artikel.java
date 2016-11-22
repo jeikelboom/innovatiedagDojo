@@ -6,13 +6,15 @@ public class Artikel {
 	private String artikelgroep;
 	private String sku;
 	private String merk;
+	private String omschrijving;
 
-	public Artikel(int prijs, String artikelgroep, String sku, String merk) {
+	public Artikel(int prijs, String artikelgroep, String sku, String merk, String omschrijving) {
 		super();
 		this.prijs = prijs;
 		this.artikelgroep = artikelgroep;
 		this.sku = sku;
 		this.merk = merk;
+		this.omschrijving = omschrijving;
 	}
 
 	public int getPrijs() {
@@ -30,6 +32,11 @@ public class Artikel {
 	public String getMerk() {
 		return merk;
 	}
+
+	public String getOmschrijving() {
+		return omschrijving;
+	}
+	
 	
 	
 }
