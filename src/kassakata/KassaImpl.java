@@ -16,7 +16,7 @@ import java.util.List;
  * Als het totaalbedrag betaald is gaat de bon naar het voorraad systeem en het financiele systeem.
  * 
  * Prijzen (voorbeeld)
- * Handzeep      Nivea      1,25
+ * Handzeep      Nivea      1,35
  * Handzeep      Dove       1,55
  * Scheerzeep    Nivea      2,50
  * Aardbeien Jam De Betuwe  1,35
@@ -27,6 +27,7 @@ import java.util.List;
  * Korting:
  * Handzeep Dove drie voor vier euro
  * Alle soorten Jam 3e gratis
+ * 
  * Alle Nivea producten Tweede gratis mix en match.
  *
  *

@@ -18,7 +18,7 @@ public class KassaImplTest {
 	public void test() {
 		kassa.scan("23");
 		int antwoord = kassa.totaal();
-		Assert.assertEquals(125, antwoord); 
+		Assert.assertEquals(135, antwoord); 
 	}
 	
 	@Test
@@ -26,7 +26,7 @@ public class KassaImplTest {
 		kassa.scan("23");
 		kassa.scan("23");
 		int antwoord = kassa.totaal();
-		Assert.assertEquals(250, antwoord); 
+		Assert.assertEquals(270, antwoord); 
 	}
 	
 	@Test
@@ -36,7 +36,7 @@ public class KassaImplTest {
 		kassa.scan("25");
 		
 		int antwoord = kassa.totaal();
-		Assert.assertEquals(500, antwoord); 
+		Assert.assertEquals(520, antwoord); 
 	}
 	
 	@Test
@@ -45,7 +45,7 @@ public class KassaImplTest {
 		kassa.scan("24");
 		kassa.scan("25");
 		
-		Assert.assertEquals(530, kassa.totaal());
+		Assert.assertEquals(540, kassa.totaal());
 	}
 	
 	

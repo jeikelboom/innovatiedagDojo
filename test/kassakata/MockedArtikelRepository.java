@@ -22,7 +22,7 @@ public class MockedArtikelRepository implements ArtikelRepository {
 	
 	static {
 		Artikel[] hulp = {
-				artikel().sku("23").merk(NIVEA).artikelgroep(HANDZEEP).omschrijving("handzeep Nivea").prijs(125).build(),
+				artikel().sku("23").merk(NIVEA).artikelgroep(HANDZEEP).omschrijving("handzeep Nivea").prijs(135).build(),
 				artikel().sku("24").merk(DOVE).artikelgroep(HANDZEEP).omschrijving("handzeep Dove").prijs(155).build(),
 				artikel().sku("25").merk(NIVEA).artikelgroep(SCHEERZEEP).omschrijving("scheerzeep").prijs(250).build(),
 				artikel().sku("26").merk(DE_BETUWE).artikelgroep(JAM).omschrijving("aardbeien jam").prijs(135).build(),
