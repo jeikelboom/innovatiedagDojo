@@ -28,13 +28,15 @@ import java.util.List;
  * Handzeep Dove drie voor vier euro
  * Alle soorten Jam 3e gratis
  * 
- * Alle Nivea producten Tweede gratis mix en match.
+ * =======> Alle Nivea producten Tweede gratis mix en match.
  *
  *
  */
 
 public class KassaImpl implements Kassa {
-	List<Artikel> artikelen = new ArrayList<Artikel>();
+	List<KortingsRegel> kortingsRegels = new ArrayList<KortingsRegel>();
+	int korting = 0 ;
+	List<BonRegel> regels = new ArrayList<BonRegel>();
 	private ArtikelRepository repository;
 	
 
@@ -43,16 +45,35 @@ public class KassaImpl implements Kassa {
 	}
 
 
+	public void addKortingsRegel(KortingsRegel kortingsRegel) {
+		this.kortingsRegels.add(kortingsRegel);
+	}
+
+
 	public void scan(String sku){
-		artikelen.add(repository.findArtikel(sku));
+		BonRegel regel = new BonRegel(repository.findArtikel(sku));
+		regels.add(regel);
 	}
 	
 	
 	public int totaal() {
 		int totaal = 0;
-		for (Artikel artikel: artikelen) {
-			totaal = totaal + artikel.getPrijs();
+		pasKortingRegelsToe();
+		
+		for (BonRegel regel: regels) {
+			totaal = totaal + regel.getPrijs();
 		}
-		return totaal;
+		return totaal - korting;
 	}
+
+
+	private void pasKortingRegelsToe() {
+		int kortingbedragje = 0;
+		for (KortingsRegel kortingsRegel : this.kortingsRegels) {
+			kortingbedragje += kortingsRegel.korting(regels);
+		}
+		this.korting = this.korting + kortingbedragje;
+	}
+	
+	
 }
