@@ -33,7 +33,7 @@ public class KassaImplTest {
 	public void test() {
 		kassa.scan("23");
 		int antwoord = kassa.totaal();
-		Assert.assertEquals(24, antwoord); 
+		Assert.assertEquals(24, antwoord);
 	}
 	
 	@Test

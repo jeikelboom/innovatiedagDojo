@@ -50,12 +50,13 @@ public class KassaImpl implements Kassa {
 	}
 
 
+	@Override
 	public void scan(String sku){
 		BonRegel regel = new BonRegel(repository.findArtikel(sku));
 		regels.add(regel);
 	}
-	
-	
+
+	@Override
 	public int totaal() {
 		int totaal = 0;
 		pasKortingRegelsToe();
